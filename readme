@@ -1,1 +1,87 @@
-file testing
+Grocery app
+
+How to download grocery Centrica
+git clone https://github.com/henriqueadonai/grocerycentrica.git
+meteor npm install
+meteor
+
+git pull
+
+every thing in react is a component
+Componentes allways started with CAPITAL Letters
+export class to required
+
+Index.html -> Layout(Component)
+
+
+Layout.jsx (Header.jsx, footer.jsx);
+Header.jsx (Title.jsx)
+
+NPM Modules
+meteor npm install react-google-login
+meteor npm install --save react-google-login
+
+
+
+Grocery App - Architeture
+main_test.html -> 
+Main_test.jsx(App_test.jsx, Helloworld.jsx, Comment.jsx)
+
+Main.html(App.jsx(Task.jsx))
+
+
+GitHUb
+
+git add .
+git commit -m "Input ans props changes"
+git push origin master
+
+
+//Must read "Collections article" of the Meteor Guide
+TODO: ADD LINK
+//Must read "Application Structure article"
+TODO: ADD LINK
+
+
+Add packege with meteor and save to the package.json:
+meteor npm install --save react-addons-pure-render-mixin
+meteor add react-meteor-data
+
+
+MONGO DB
+meteor mongo
+db.tasks.insert({text:'Hello world', createAt: new Date(), user:'henrique.cabral' })
+db.tasks.find()
+
+
+REACT TOOLS
+https://fb.me/react-devtools"
+https://facebook.github.io/react/docs/reusable-components.html
+
+ReactDOM
+https://facebook.github.io/react/docs/top-level-api.html
+
+React Events
+https://facebook.github.io/react/docs/events.html
+
+JS
+`let`, is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
+
+Google 
+https://developers.google.com/identity/sign-in/web/devconsole-project
+
+Here is your client ID
+466670531300-vhks4a5l6bda3u3847gj4qs33qgsupfb.apps.googleusercontent.com 
+    
+The Client ID lets your app access enabled Google APIs. 
+Flux
+https://auth0.com/blog/adding-authentication-to-your-react-flux-app/
+Adding authentication to your React Flux app
+ReactJS authentication gets easy if you understand just a few basic concepts. Because, let’s face it. React is the new cool kid on the block.
+
+ For parent-child communication, simply pass props.
+ 
+ 
+ JAVASCRIPT
+ http://stackoverflow.com/questions/32558514/javascript-es6-export-const-vs-export-let
+
