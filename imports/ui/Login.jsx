@@ -26,9 +26,6 @@ loginMenu() {
 }
 
 loginSignin(){
-    //        Object { googleId: "110066734457150173332", imageUrl: "https://lh3.googleusercontent.com/-…", email: "henriqueadonai@gmail.com", name: "Henrique Cabral", givenName: "Henrique", familyName: "Cabral" }
-    console.log('signin');
-    console.log(this.props.userobj);
     profilePhoto = this.props.userobj.imageUrl;
     profileName = this.props.userobj.name;
     return (<DisplayAnImage profilePhoto={profilePhoto} profileName={profileName} />);

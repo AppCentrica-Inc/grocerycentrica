@@ -41,7 +41,7 @@ handleSubmit(event){
                 Tasks.insert({
                     text,
                     createdAt : new Date(),
-                    user: 'appcentrica',
+                    user: this.state.userobj.email,
                 });
                 ReactDOM.findDOMNode(this.refs.textInput).value = '';        
           }
