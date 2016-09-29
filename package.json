@@ -1,5 +1,7 @@
 {
-  "name": "simple-todos",
+  "name": "grocerycentrica",
+  "description": "Grocery Centrica",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "meteor run"
@@ -10,5 +12,20 @@
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-google-login": "^2.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriqueadonai/grocerycentrica.git"
+  },
+   "keywords": [
+    "grocery",
+    "centrica",
+    "appcentrica"
+  ],
+  "author": "Henrique Adonai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/henriqueadonai/grocerycentrica/issues"
+  },
+  "homepage": "https://github.com/henriqueadonai/grocerycentrica#readme"
 }
