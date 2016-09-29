@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
-import { Tasks } from '../api/tasks.js';
+import { Tasks } from '../api/tasks.js';    
 import Task from './Task.jsx';
-
+import LoginGoogle from './Login.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
         
         this.state = {
           hideCompleted: false,  
-          connect : true,
+          connect : false,
           userobj: null,
           error: null            
         };
@@ -46,6 +46,13 @@ handleSubmit(event){
                 ReactDOM.findDOMNode(this.refs.textInput).value = '';        
           }
     }
+ 
+handleUserLogin(connect, userObj) {
+    this.setState({
+      connect: connect,
+      userobj: userObj
+    });
+}
     
 
     toggleHideCompleted(){
@@ -59,6 +66,7 @@ handleSubmit(event){
     return (
       
       <div className="container">
+       <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
         <header>
           <h1>GroceryCentrica - ({this.props.incompleteCount})</h1>
 
