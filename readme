@@ -79,9 +79,23 @@ https://auth0.com/blog/adding-authentication-to-your-react-flux-app/
 Adding authentication to your React Flux app
 ReactJS authentication gets easy if you understand just a few basic concepts. Because, let’s face it. React is the new cool kid on the block.
 
+
+http://grocerycentrica.azurewebsites.net
+
  For parent-child communication, simply pass props.
  
+ Database Name:
+ dbgrocerycentrica
+ user
+ grocerycentrica
+ appcentrica
+ 
+ mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica
+ 
+ DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy www.appgrocerycentrica.com --settings path-to-settings.json
  
  JAVASCRIPT
  http://stackoverflow.com/questions/32558514/javascript-es6-export-const-vs-export-let
+ 
+ https://mlab.com/databases/dbgrocerycentrica   
 
