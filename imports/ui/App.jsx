@@ -13,7 +13,7 @@ class App extends Component {
         
         this.state = {
           hideCompleted: false,  
-          connect : true,
+          connect : false,
           userobj: null,
           error: null            
         };
