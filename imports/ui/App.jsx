@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
-import { Tasks } from '../api/tasks.js';    
-import Task from './Task.jsx';
+import { Grocerys } from '../api/grocerys.js';    
+import Grocery from './Grocery.jsx';
 import LoginGoogle from './Login.jsx';
 
 // App component - represents the whole app
@@ -19,16 +19,15 @@ class App extends Component {
         };
     }
 
-  renderTasks() {
-      let filteredTasks = this.props.tasks;
+  renderGrocerys() {
+      let filteredGrocerys = this.props.items;
       if(this.state.hideCompleted){
-          filteredTasks = filteredTasks.filter(task => !task.checked);
+          filteredGrocerys = filteredGrocerys.filter(item => !item.checked);
       }
       
-      return filteredTasks.map((task) => 
-                               <Task key={task._id} tasked={task}/>
+    return filteredGrocerys.map((item) => 
+                               <Grocery key={item._id} itemed={item} connect={this.state.connect} userobj={this.state.userobj}/>
                               );
-
   }
                                
 handleSubmit(event){
@@ -36,12 +35,13 @@ handleSubmit(event){
         var connect = this.state.connect;
           if (connect){          
                 const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-                //Meteor.call('tasks.insert', text,this.state.userobj.email);
+                //Meteor.call('grocery.insert', text,this.state.userobj.email);
               
-                Tasks.insert({
+                Grocerys.insert({
                     text,
                     createdAt : new Date(),
                     user: this.state.userobj.email,
+                    isDelete: false, 
                 });
                 ReactDOM.findDOMNode(this.refs.textInput).value = '';        
           }
@@ -84,9 +84,10 @@ handleUserLogin(connect, userObj) {
             </form>
         </header>      
  
-        <ul>
-          {this.renderTasks()}
-        </ul>
+         <ul>
+           {this.renderGrocerys()}
+         </ul>
+
 
       </div>
     );
@@ -94,7 +95,7 @@ handleUserLogin(connect, userObj) {
 }
 
 App.propTypes ={
-    tasks: PropTypes.array.isRequired,
+    items: PropTypes.array.isRequired,
     incompleteCount : PropTypes.number.isRequired,
     currentUser: PropTypes.object,
     login: PropTypes.object
@@ -102,8 +103,8 @@ App.propTypes ={
 
 export default createContainer(() => {
   return {
-      tasks: Tasks.find({},{sort: { createdAt: -1}}).fetch(),
-      incompleteCount: Tasks.find({checked: { $ne: true }}).count(),
+      items: Grocerys.find({isDelete:false},{sort: { createdAt: -1}}).fetch(),
+      incompleteCount: Grocerys.find({checked: { $ne: true }, isDelete:false}).count(),
   };
 }, App);
 

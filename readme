@@ -1,58 +1,41 @@
-Grocery app
+GROCERY APP
+http://grocerycentrica.azurewebsites.net
 
-How to download grocery Centrica
-git clone https://github.com/henriqueadonai/grocerycentrica.git
-meteor npm install
-meteor
+1-Install Git Hub
+https://git-scm.com/
+Create a Get account
+git clone https://github.com/AppCentrica-Inc/grocerycentrica.git
 
+
+2-Install Meteor ( https://www.meteor.com/ )
+
+3-Open cmd (Open as administrator) or use Node.js Command prompt
+Find a folder that you download the solution and execute
+meteor npm install (You will download all the packges to run the APP)
+
+3-You are done!
+Inside the APP folder using cmd or Node.js Command Prompt, type meteor and press "enter"
+You are done!
+
+
+You can use any IDE to code (Sublime, Atom, Bracket, Visual Studio Code, NotePad++, Notepad, VI, VIM, paper)
+http://localhost:3000/
+
+_______________________________________________
+GIT COMMANDS:
 git pull
 
-every thing in react is a component
-Componentes allways started with CAPITAL Letters
-export class to required
-
-Index.html -> Layout(Component)
-
-
-Layout.jsx (Header.jsx, footer.jsx);
-Header.jsx (Title.jsx)
-
-NPM Modules
-meteor npm install react-google-login
-meteor npm install --save react-google-login
-
-
-
-Grocery App - Architeture
-main_test.html -> 
-Main_test.jsx(App_test.jsx, Helloworld.jsx, Comment.jsx)
-
-Main.html(App.jsx(Task.jsx))
-
-
-GitHUb
-
+Commit Changes:
 git add .
 git commit -m "Input ans props changes"
 git push origin master
 
 
-//Must read "Collections article" of the Meteor Guide
-TODO: ADD LINK
-//Must read "Application Structure article"
-TODO: ADD LINK
-
-
-Add packege with meteor and save to the package.json:
-meteor npm install --save react-addons-pure-render-mixin
-meteor add react-meteor-data
-
-
-MONGO DB
-meteor mongo
-db.tasks.insert({text:'Hello world', createAt: new Date(), user:'henrique.cabral' })
-db.tasks.find()
-
+_______________________________________________
+REACT FACTS:
+every thing in react is a component
+Componentes allways started with CAPITAL Letters
+export class to required
 
 REACT TOOLS
 https://fb.me/react-devtools"
@@ -64,38 +47,38 @@ https://facebook.github.io/react/docs/top-level-api.html
 React Events
 https://facebook.github.io/react/docs/events.html
 
-JS
-`let`, is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
-
-Google 
-https://developers.google.com/identity/sign-in/web/devconsole-project
-
-Here is your client ID
-466670531300-vhks4a5l6bda3u3847gj4qs33qgsupfb.apps.googleusercontent.com 
-    
-The Client ID lets your app access enabled Google APIs. 
-Flux
-https://auth0.com/blog/adding-authentication-to-your-react-flux-app/
-Adding authentication to your React Flux app
-ReactJS authentication gets easy if you understand just a few basic concepts. Because, let’s face it. React is the new cool kid on the block.
+ https://mlab.com/databases/dbgrocerycentrica   
 
 
-http://grocerycentrica.azurewebsites.net
+_____________________________________________
+METEOR 
+meteor npm install react-google-login
+meteor npm install --save react-google-login
 
- For parent-child communication, simply pass props.
- 
+Add packege with meteor and save to the package.json:
+meteor npm install --save react-addons-pure-render-mixin
+meteor add react-meteor-data
+
+__________________________________________________
+MONGO DB
+meteor mongo
+db.tasks.insert({text:'Hello world', createAt: new Date(), user:'henrique.cabral' })
+db.tasks.find()
+
  Database Name:
  dbgrocerycentrica
  user
  grocerycentrica
  appcentrica
+
+show dbs
+show collections
  
  mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica
+
+____________________________________________________
+AZURE
+https://github.com/talos-code/meteor-azure
  
- DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy www.appgrocerycentrica.com --settings path-to-settings.json
- 
- JAVASCRIPT
- http://stackoverflow.com/questions/32558514/javascript-es6-export-const-vs-export-let
- 
- https://mlab.com/databases/dbgrocerycentrica   
+
 
