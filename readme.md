@@ -21,7 +21,7 @@ meteor npm install (You will download all the packages to run the APP)
 ```sh
 meteor
 ```
-You are done!**
+**You are done!**
 
 ![N|Solid](https://cdn-enterprise.discourse.org/meteor/uploads/default/original/2X/e/e94f3eb788bdc1902d209a52475c376f0178263b.JPG)
 
@@ -81,9 +81,10 @@ show dbs
 show collections
 ```
 **https://mlab.com/databases/dbgrocerycentrica**
+ 
  **Database Name:**
   - dbgrocerycentrica
- - user:  grocerycentrica
+ - user: grocerycentrica
  - appcentrica
 
 **mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica**
