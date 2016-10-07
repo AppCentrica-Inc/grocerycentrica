@@ -38,8 +38,8 @@ body {
 
 
 header {
-  background: #0d5f00;
-  background-image: linear-gradient(to bottom, #0d5f00, #afeea5 100%);
+  background: #17670A;
+  /*background-image: linear-gradient(to bottom, #0d5f00, #afeea5 100%);*/
   padding: 20px 15px 15px 15px;
   position: relative;
 }
@@ -81,7 +81,9 @@ h1 {
   color: white;
 }
 
-
+.loginbox{
+  background-color:  #EDEDED;
+}
 
 form {
   margin-top: 10px;
@@ -95,8 +97,9 @@ form {
   padding: 10px 0;
   border: 1px;
   width: 100%;
-  padding-right: 80px;
+  padding-right: 90px;
   font-size: 1em;
+  border-radius: 3px;
 }
 
 
