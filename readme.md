@@ -71,6 +71,9 @@ Add packege with meteor and save to the package.json:
 meteor npm install --save react-addons-pure-render-mixin
 meteor add react-meteor-data
 
+*http://info.meteor.com/blog/optimistic-ui-with-meteor-latency-compensation
+
+
 
 #### MONGO DB
 ```sh
@@ -83,7 +86,7 @@ show collections
 **https://mlab.com/databases/dbgrocerycentrica**
  
  **Database Name:**
-  - dbgrocerycentrica
+ - dbgrocerycentrica
  - user: grocerycentrica
  - appcentrica
 

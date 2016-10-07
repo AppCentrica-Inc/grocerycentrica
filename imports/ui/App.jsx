@@ -35,14 +35,7 @@ handleSubmit(event){
         var connect = this.state.connect;
           if (connect){          
                 const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-                //Meteor.call('grocery.insert', text,this.state.userobj.email);
-              
-                Grocerys.insert({
-                    text,
-                    createdAt : new Date(),
-                    user: this.state.userobj.email,
-                    isDelete: false, 
-                });
+                Meteor.call('grocerys.insert', text, this.state.userobj.email);
                 ReactDOM.findDOMNode(this.refs.textInput).value = '';        
           }
     }

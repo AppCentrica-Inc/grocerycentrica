@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-
+import { Meteor } from 'meteor/meteor';
 import {Grocerys} from '../api/grocerys.js';
 
 
@@ -8,26 +8,17 @@ import {Grocerys} from '../api/grocerys.js';
 export default class Grocery extends Component {
     
     toggleChecked(){
-        //console.log("toggleChecked")
-        Grocerys.update(this.props.itemed._id,{
-           $set: {checked: !this.props.itemed.checked }, 
-        });
+        Meteor.call('grocerys.setChecked',this.props.itemed._id,!this.props.itemed.checked);
     }
     
    deleteThisItem(){
      if(this.props.connect){
-       //Grocerys.remove(this.props.itemed._id);
-       Grocerys.update(this.props.itemed._id,{
-         $set: {isDelete: true, 
-                user: this.props.userobj.email  
-            },
-       });
+       Meteor.call('grocerys.remove',this.props.itemed._id,this.props.userobj.email);
      }
    }    
     
   render() {
-      const taskClassName = this.props.itemed.checked ? 'checked' : '';
-  //console.log(this.props.tasked);
+    const taskClassName = this.props.itemed.checked ? 'checked' : '';
       
     return (        
       <li className={taskClassName}>
