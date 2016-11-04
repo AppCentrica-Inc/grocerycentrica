@@ -1,5 +1,5 @@
 # GROCERY APP
-[![N|Solid](http://www.appcentrica.com/images/logo.png?version=3)](http://grocerycentrica.azurewebsites.net)
+[![N|Solid](https://www.appcentrica.com/wp-content/themes/appcentrica_theme/images/logo.svg))](http://grocerycentrica.azurewebsites.net)
 
 
 ### 1-Install Git Hub Windows
