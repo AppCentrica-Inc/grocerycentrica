@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Grocerys } from '../api/grocerys.js';    
 import Grocery from './Grocery.jsx';
 import LoginGoogle from './Login.jsx';
+import GroceryLogo from './Logo.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -61,7 +62,8 @@ handleUserLogin(connect, userObj) {
       <div className="container">
        <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
         <header>
-          <h1>© GroceryCentrica - ({this.props.incompleteCount})</h1>
+          {/*<h1>© GroceryCentrica - ({this.props.incompleteCount})</h1>*/}
+          <GroceryLogo />
 
         <label className="hide-completed">
              <input type="checkbox"
@@ -69,7 +71,7 @@ handleUserLogin(connect, userObj) {
              checked={this.state.hideCompleted}
              onClick={this.toggleHideCompleted.bind(this)}
              />
-              Hide Completed Tasks
+              Remove sold out Grocery! 
           </label>
 
            <form className='new-task' onSubmit={this.handleSubmit.bind(this)}>
