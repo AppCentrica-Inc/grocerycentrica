@@ -36,18 +36,6 @@ body {
 }
 
 
-.photoLayout {
-	border-radius: 50%;
-	display: block;
-	margin: -1px;
-	overflow: hidden;
-	position: relative;
-	height: 60px;
-	width: 60px;
-	z-index: 0;
-}
-
-
 
 header {
   /*background: #17670A;*/
@@ -94,9 +82,40 @@ h1 {
   color: white;
 }
 
+
+.photoLayout {
+    color: rgb(255, 255, 255);
+    background-color: rgb(188, 188, 188);
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    
+}
+
 .loginbox{
   background-color:  #EDEDED;
+  /*//display: block;*/
+  font-size: 16px;
+  position: relative;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  transition-property: all;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: 0ms;
+  margin-left: 0px;
+  line-height: 16px;
+  padding: 35px 36px 35px 95px;
 }
+
+
 
 form {
   margin-top: 10px;
