@@ -5,6 +5,7 @@ import { Grocerys } from '../api/grocerys.js';
 import Grocery from './Grocery.jsx';
 import LoginGoogle from './Login.jsx';
 import GroceryLogo from './Logo.jsx';
+import AddGroceryForm from './AddGrocery.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -21,23 +22,25 @@ class App extends Component {
     }
 
   renderGrocerys() {
-      let filteredGrocerys = this.props.items;
-      if(this.state.hideCompleted){
-          filteredGrocerys = filteredGrocerys.filter(item => !item.checked);
-      }
-      
-    return filteredGrocerys.map((item) => 
+    var connect = this.state.connect;
+    if(connect){
+        let filteredGrocerys = this.props.items;
+        if(this.state.hideCompleted){
+            filteredGrocerys = filteredGrocerys.filter(item => !item.checked);
+        }
+        return filteredGrocerys.map((item) => 
                                <Grocery key={item._id} itemed={item} connect={this.state.connect} userobj={this.state.userobj}/>
                               );
+    }
   }
                                
-handleSubmit(event){
+handleSubmit(grocery){
         event.preventDefault();
         var connect = this.state.connect;
           if (connect){          
-                const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
+                const text = grocery;
                 Meteor.call('grocerys.insert', text, this.state.userobj.email);
-                ReactDOM.findDOMNode(this.refs.textInput).value = '';        
+                
           }
     }
  
@@ -47,14 +50,6 @@ handleUserLogin(connect, userObj) {
       userobj: userObj
     });
 }
-    
-
-    toggleHideCompleted(){
-        this.setState({
-           hideCompleted: !this.state.hideCompleted,
-        });
-    }
-
 
   render() {
     return (
@@ -62,28 +57,12 @@ handleUserLogin(connect, userObj) {
       <div className="container">
        <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
         <header>
-          {/*<h1>© GroceryCentrica - ({this.props.incompleteCount})</h1>*/}
           <GroceryLogo />
-
-        <label className="hide-completed">
-             <input type="checkbox"
-             readOnly
-             checked={this.state.hideCompleted}
-             onClick={this.toggleHideCompleted.bind(this)}
-             />
-              Remove sold out Grocery! 
-          </label>
-
-           <form className='new-task' onSubmit={this.handleSubmit.bind(this)}>
-                <input type='text' ref='textInput' placeholder='Type to add new a grocery...'></input>
-            </form>
-        </header>      
- 
+          <AddGroceryForm  handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}/>
+      </header>      
          <ul>
            {this.renderGrocerys()}
-         </ul>
-
-
+          </ul>
       </div>
     );
   }

@@ -82,6 +82,10 @@ h1 {
   color: white;
 }
 
+.welcomeText{
+    color: #047d12;
+    font-weight: 500;
+}
 
 .photoLayout {
     color: rgb(255, 255, 255);
