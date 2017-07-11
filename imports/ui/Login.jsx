@@ -21,7 +21,7 @@ loginMenu() {
         buttonText="Login"
         onSuccess={this.responseGoogleOnSuccess.bind(this)}
         onFailure={this.responseGoogleOnFailure}
-        className="loginButton"
+        className="no-underline f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2"
       />    );
 }
 

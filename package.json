@@ -12,7 +12,8 @@
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-google-login": "^2.5.2"
+    "react-google-login": "^2.5.2",
+    "tachyons": "^4.7.4"
   },
   "repository": {
     "type": "git",
