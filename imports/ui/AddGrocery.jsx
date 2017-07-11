@@ -22,7 +22,7 @@ export default class AddGroceryForm extends Component {
                 </form>
                 </div>  );
         }else{
-            return (<div className="welcomeText"> Welcome to Grocery Centrica! Feel free to request weekly grocery! Just login in!</div>);            
+            return (<div className="fw1 fontColor"> Welcome to Grocery Centrica! Feel free to request weekly grocery! Just login in!</div>);            
         }
     }
 }

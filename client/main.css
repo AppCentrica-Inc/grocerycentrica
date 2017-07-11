@@ -1,25 +1,16 @@
 body {
-  font-family: sans-serif;
-  /*background: linear-gradient(2deg, #afeea5, #0d5f00);
-  background-size: 400% 400%;
-  background-attachment: fixed;*/
   background-image: url('/shoppingcart.png');
-  /*background-repeat: no-repeat;*/
-  background-attachment: fixed;
-  background-size: 100%;
-  vertical-align: middle;
-  background-position: 100%;  
-
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0;
-  margin: 2px;
-  
 }
+
+
+@media screen and (min-width: 10em) {
+    .f-headline-l {
+        font-size: 6rem;
+    }
+
+}
+
+
 
 .container {
   max-width: 600px;
@@ -78,27 +69,13 @@ header {
   position: relative;
 }
 
-
-
 #login-buttons {
   display: block;
 }
 
-h1 {
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-right: 1em;
-  text-transform: uppercase;
-  font-family: 'Open Sans',Arial,Helvetica Neue,sans-serif;
-  letter-spacing: 1px;
-  color: white;
-}
 
-.welcomeText{
+.fontColor{
     color: #047d12;
-    font-weight: 500;
 }
 
 .photoLayout {
