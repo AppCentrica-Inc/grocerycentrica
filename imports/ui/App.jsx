@@ -55,13 +55,15 @@ handleUserLogin(connect, userObj) {
     return (
           <div className="mw5 mw7-ns center ph1-ns">
            <header className="sans-serif bg-black-60 pb2 pa3 br2">
-              <GroceryLogo/>
+              <GroceryLogo connect={this.state.connect} userobj={this.state.userobj}/>
           </header>
-          <AddGroceryForm  handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}/>      
-          <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
-            <ul>
-              {this.renderGrocerys()}
-              </ul>
+          <div className="">
+            <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
+            <AddGroceryForm   handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}  userobj={this.state.userobj}/>                
+              <ul className="list pl0 mt0 center">
+                {this.renderGrocerys()}
+                </ul>
+            </div>
           </div>
 
     );

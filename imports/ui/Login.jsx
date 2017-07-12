@@ -18,10 +18,10 @@ responseGoogleOnFailure(failure){
 loginMenu() {
     return  (<GoogleLogin
         clientId="466670531300-vhks4a5l6bda3u3847gj4qs33qgsupfb.apps.googleusercontent.com"
-        buttonText="Login"
+        buttonText="Log In"
         onSuccess={this.responseGoogleOnSuccess.bind(this)}
         onFailure={this.responseGoogleOnFailure}
-        className="no-underline f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2"
+        className="no-underline fw6 f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2"
       />    );
 }
 
@@ -34,12 +34,7 @@ loginSignin(){
 
 render() {
     var login;
-    if (this.props.connect) {
-      login = this.loginSignin();
-    } else {
-      login = this.loginMenu();
-    }
-
+    login = this.props.connect ? null : this.loginMenu()
      return (login);
     }   
 }

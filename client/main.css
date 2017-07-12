@@ -2,6 +2,13 @@ body {
   background-image: url('/shoppingcart.png');
 }
 
+.likegrocery {
+  background-image: url('/hand-157251_640.png');
+}
+
+.likeface{
+  background-image: url('/likeButton.png');
+}
 
 @media screen and (min-width: 10em) {
     .f-headline-l {
@@ -10,22 +17,10 @@ body {
 
 }
 
-.green-80 {
-    color: rgb(4, 125, 18);
-}
-
-header {
-  /*background: #17670A;*/
-  /*background-image: linear-gradient(to bottom, #0d5f00, #afeea5 100%);*/
-  /*background: #f7f7f7;
-  padding: 20px 15px 15px 15px;
-  position: relative;*/
-}
 
 #login-buttons {
   display: block;
 }
-
 
 .fontColor{
     color: #047d12;
@@ -65,33 +60,12 @@ header {
 
 
 
-form {
-  margin-top: 10px;
-  margin-bottom: -10px;
-  position: relative;
-}
-
-
-.new-task input {
-  box-sizing: border-box;
-  padding: 10px 0;
-  border: 1px;
-  width: 100%;
-  padding-right: 90px;
-  font-size: 1em;
-  border-radius: 3px;
-}
-
-
-
 .new-task input:focus{
   outline: 0;
 }
 
 
 ul {
-  margin: 0;
-  padding: 0;
   background: white;
 }
 
@@ -107,20 +81,6 @@ ul {
 }
 
 
-
-li {
-  position: relative;
-  list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
-}
-
-
-
-li .text {
-  margin-left: 10px;
-}
-
 li.checked {
   color: #888;
 }
@@ -132,20 +92,8 @@ li.checked .text {
 }
 
 
-
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
-
-
-
 header .hide-completed {
   float: right;
-}
-
-.toggle-private {
-  margin-left: 5px;
 }
 
 
@@ -158,5 +106,10 @@ header .hide-completed {
     transition: background-color .15s ease-in-out;
 }
 
+.green-80 {
+    color: rgb(4, 125, 18);
+}
 
-
+.bgbutton-green {
+    background-color: rgb(4, 125, 18);
+}
