@@ -54,10 +54,10 @@ handleUserLogin(connect, userObj) {
   render() {
     return (
           <div className="mw5 mw7-ns center ph1-ns">
-           <header>
-              <GroceryLogo />
-              <AddGroceryForm  handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}/>
-          </header>      
+           <header className="sans-serif bg-black-60 pb2 pa3 br2">
+              <GroceryLogo/>
+          </header>
+          <AddGroceryForm  handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}/>      
           <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
             <ul>
               {this.renderGrocerys()}
