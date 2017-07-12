@@ -25,19 +25,18 @@ export default class Grocery extends Component {
     const taskClassName = this.props.itemed.checked ? 'checked' : '';
       // <li className={taskClassName}>
     return (        
-      <li className="flex items-center lh-copy pa3 ph0-l bb b--black-10 w-100">
-        <input className="w2-ns" type="checkbox"   onClick={this.toggleChecked.bind(this)}  />
+      <div className="ba bl-0 bt-0 br-0 b--dotted b--black-30 cf">
+            <p className="pl3 fw2 f5 fl">
+              <span className="">{this.props.itemed.text}</span>
+            </p>
+            <p className="pr3 fw2 f5 fr">
+              <button className="dn db-ns" value="1" onClick={this.deleteThisItem.bind(this)}>Delete Grocery</button>
+            </p>
+       </div>
 
-        <div className="pl3 flex-auto f6 db">
-          <span className='text'>{this.props.itemed.text}</span>      
-         </div>
-          
-            {/*<button className="likeface" value="1" onClick={this.likeThisItem.bind(this)}>Like Grocery  
-            </button>*/}
-            <div>
-            <button className="flex-right mr2" value="1" onClick={this.deleteThisItem.bind(this)}>Delete Grocery</button>
-          </div>
-      </li>
+      
+        
+      
     );
   }
 }

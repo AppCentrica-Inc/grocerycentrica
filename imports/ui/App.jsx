@@ -57,12 +57,12 @@ handleUserLogin(connect, userObj) {
            <header className="sans-serif bg-black-60 pb2 pa3 br2">
               <GroceryLogo connect={this.state.connect} userobj={this.state.userobj}/>
           </header>
-          <div className="">
+          <div>
             <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
             <AddGroceryForm   handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}  userobj={this.state.userobj}/>                
-              <ul className="list pl0 mt0 center">
+              <section className="center ph3 ph5-ns ph0-l mw7 br2">
                 {this.renderGrocerys()}
-                </ul>
+              </section>              
             </div>
           </div>
 

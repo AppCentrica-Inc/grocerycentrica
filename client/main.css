@@ -65,7 +65,7 @@ body {
 }
 
 
-ul {
+section {
   background: white;
 }
 
@@ -80,21 +80,6 @@ ul {
   position: relative;
 }
 
-
-li.checked {
-  color: #888;
-}
-
-
-
-li.checked .text {
-  text-decoration: line-through;
-}
-
-
-header .hide-completed {
-  float: right;
-}
 
 
 
