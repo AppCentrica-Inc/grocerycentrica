@@ -6,8 +6,10 @@ export default class AddGroceryForm extends Component {
     handleSubmit(event){
         event.preventDefault();
         const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim()
-        ReactDOM.findDOMNode(this.refs.textInput).value = '';        
-        this.props.handleSubmit(text);        
+        if(text !== ""){
+            ReactDOM.findDOMNode(this.refs.textInput).value = '';        
+            this.props.handleSubmit(text);        
+        }        
     }
 
 
