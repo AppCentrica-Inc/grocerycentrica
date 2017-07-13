@@ -29,5 +29,19 @@
   "bugs": {
     "url": "https://github.com/henriqueadonai/grocerycentrica/issues"
   },
-  "homepage": "https://github.com/henriqueadonai/grocerycentrica#readme"
+  "homepage": "https://github.com/henriqueadonai/grocerycentrica#readme",
+  "meteor-azure": {
+    "siteName": "grocerytesting",
+    "resourceGroup": "grocerytesting",
+    "subscriptionId": "ed8cfbd1-40b5-4e26-9481-5c7d954ada95",
+    "tenantId": "a0e2e04c-0582-496c-adf2-15ae08923b29",
+    "deploymentCreds": {
+      "username": "henriqueadonai",
+      "password": "appcentrica2016"
+    },
+    "envVariables": {
+      "ROOT_URL": "https://grocerytesting.azurewebsites.net",
+      "MONGO_URL": "mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica"
+    }
+  }
 }

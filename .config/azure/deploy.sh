@@ -83,7 +83,7 @@ export PATH="$HOME/meteor-azure/.meteor:$PATH"
 # Install NVM
 if [ ! -d nvm ]; then
   echo meteor-azure: Installing NVM
-  curl -L -o nvm-noinstall.zip "https://github.com/coreybutler/nvm-windows/releases/download/1.1.1/nvm-noinstall.zip"
+  curl -L -o nvm-noinstall.zip "https://github.com/coreybutler/nvm-windows/releases/download/1.1.5/nvm-noinstall.zip"
   unzip nvm-noinstall.zip -d nvm
   rm nvm-noinstall.zip
   (echo root: D:/home/meteor-azure/nvm && echo proxy: none) > nvm/settings.txt

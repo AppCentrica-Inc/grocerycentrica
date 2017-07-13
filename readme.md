@@ -92,6 +92,9 @@ show collections
 
 **mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica**
 
+###DEPLOYMENT
+- http://meteor-azure.readthedocs.io/en/latest/index.html
+
 ### AZURE
 
 - https://github.com/talos-code/meteor-azure
