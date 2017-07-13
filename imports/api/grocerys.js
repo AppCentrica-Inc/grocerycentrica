@@ -5,6 +5,7 @@ import { check } from 'meteor/check';
  
 
 export const Grocerys = new Mongo.Collection('grocery');
+export const LoginGrocery = new Mongo.Collection('logingrocery')
 
 Meteor.methods({
     'grocerys.insert'(text,email) {
@@ -35,6 +36,13 @@ Meteor.methods({
         check(setChecked, Boolean);
         Grocerys.update(groceryID,{
            $set: {checked: setChecked }, 
+        });
+    },
+    'grocery.loginIn'(username){
+        check(username, String);
+        LoginGrocery.insert({
+            username,
+            accessDate: new Date()
         });
     }
 

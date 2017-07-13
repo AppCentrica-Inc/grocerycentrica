@@ -1,0 +1,16 @@
+{
+"meteor-azure": {
+    "siteName": "grocerycentrica",
+    "resourceGroup": "centricagrocery",
+    "subscriptionId": "ed8cfbd1-40b5-4e26-9481-5c7d954ada95",
+    "tenantId": "a0e2e04c-0582-496c-adf2-15ae08923b29",
+    "deploymentCreds": {
+      "username": "appcentricagrocery",
+      "password": "appcentrica2016"
+    },
+    "envVariables": {
+      "ROOT_URL": "https://grocerycentrica.azurewebsites.net",
+      "MONGO_URL": "mongodb://grocerycentrica:appcentrica@ds041506.mlab.com:41506/dbgrocerycentrica"
+    }
+  }
+}

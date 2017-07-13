@@ -24,19 +24,29 @@ export default class Grocery extends Component {
   render() {
     const taskClassName = this.props.itemed.checked ? 'checked' : '';
       // <li className={taskClassName}>
+      let isDelete = false;
+      if(this.props.userobj){
+         if(this.props.userobj.email == "henrique.cabral@appcentrica.com"){
+           isDelete = true;
+         }          
+      }
+
     return (        
       <div className="ba bl-0 bt-0 br-0 b--dotted b--black-30 cf">
             <p className="pl3 fw2 f5 fl">
               <span className="">{this.props.itemed.text}</span>
             </p>
+           
+          {isDelete ? 
             <p className="pr3 fw2 f5 fr">
               <button className="dn db-ns" value="1" onClick={this.deleteThisItem.bind(this)}>Delete Grocery</button>
             </p>
+            :
+            null
+          }  
+            
+          
        </div>
-
-      
-        
-      
     );
   }
 }

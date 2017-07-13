@@ -43,6 +43,7 @@ body {
     
 }
 
+
 .loginbox{
   background-color:  #EDEDED;
   /*//display: block;*/
@@ -97,4 +98,8 @@ section {
 
 .bgbutton-green {
     background-color: rgb(4, 125, 18);
+}
+
+.bg-blackheader{
+    background-color: rgba( 0, 0, 0, .85 );
 }

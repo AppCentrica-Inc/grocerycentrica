@@ -49,12 +49,15 @@ handleUserLogin(connect, userObj) {
       connect: connect,
       userobj: userObj
     });
+    if(userObj){
+        Meteor.call('grocery.loginIn',userObj.name);
+    }    
 }
 
   render() {
     return (
-          <div className="mw5 mw7-ns center ph1-ns">
-           <header className="sans-serif bg-black-60 pb2 pa3 br2">
+          <div className="mw7-ns center ph1-ns">
+           <header className="sans-serif bg-blackheader pb2 pa3 br2">
               <GroceryLogo connect={this.state.connect} userobj={this.state.userobj}/>
           </header>
           <div>
