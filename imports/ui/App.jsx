@@ -23,7 +23,7 @@ class App extends Component {
 
   renderGrocerys() {
     var connect = this.state.connect;
-    if(true){
+    if(connect){
         let filteredGrocerys = this.props.items;
         if(this.state.hideCompleted){
             filteredGrocerys = filteredGrocerys.filter(item => !item.checked);
