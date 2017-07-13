@@ -82,7 +82,7 @@ App.propTypes ={
 
 export default createContainer(() => {
   return {
-      items: Grocerys.find({isDelete:false},{sort: { createdAt: -1}}).fetch(),
+      items: Grocerys.find({isDelete:false},{sort: { text: 1}}).fetch(),
       incompleteCount: Grocerys.find({checked: { $ne: true }, isDelete:false}).count(),
   };
 }, App);
