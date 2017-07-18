@@ -16,12 +16,9 @@ export default class GroceryLogo extends Component {
                         :
                         <div className="fw3 f5 green-80 mt2 mb2"> Welcome to Grocery Centrica! Feel free to request weekly grocery! Just login in!</div>
                      }
-                    
-
                 </div>
         );
     }
 
 }
 
-//{isPending ? <h2>Loading...</h2>: <CardList robots={filteredRobots} /> }

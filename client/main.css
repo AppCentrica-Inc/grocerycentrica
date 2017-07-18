@@ -2,13 +2,9 @@ body {
   background-image: url('/shoppingcart.png');
 }
 
-.likegrocery {
-  background-image: url('/hand-157251_640.png');
-}
 
-.likeface{
-  background-image: url('/likeButton.png');
-}
+
+
 
 @media screen and (min-width: 10em) {
     .f-headline-l {
@@ -102,4 +98,12 @@ section {
 
 .bg-blackheader{
     background-color: rgba( 0, 0, 0, .75 );
+}
+
+.likeicon{
+    background-image: url('/public/right-hand-thumb-up.svg');
+}
+
+.deleteicon{
+    background-image: url('/public/close-browser.svg')
 }

@@ -100,3 +100,8 @@ show collections
 - https://github.com/talos-code/meteor-azure
 - https://portal.azure.com/?whr=live.com#dashboard/private/c2eaec10-2e6d-42eb-b537-bebdcb314022
 
+### credits
+Icon (close-browser.svg) made by Designerz Base from **www.flaticon.com**
+Like (right-hand-thumb-up.svg) Icon made by Freepik from **www.flaticon.com**
+
+
