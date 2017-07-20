@@ -56,34 +56,34 @@ handleUserLogin(connect, userObj) {
 
   render() {
     return (
-          <div className="mw7-ns center ph1-ns">
+        <div className="mw7-ns center">
+          <div className="tc">
            <header className="sans-serif bg-blackheader pb2 pa3 br2">
               <GroceryLogo connect={this.state.connect} userobj={this.state.userobj}/>
           </header>
+          </div>
           <div>
             <LoginGoogle connect={this.state.connect}  userobj={this.state.userobj} handleUserLogin={this.handleUserLogin.bind(this)}/>
             <AddGroceryForm   handleSubmit={this.handleSubmit.bind(this)} connect={this.state.connect}  userobj={this.state.userobj}/>                
-              <section className="center ph3 ph5-ns ph0-l mw7 br2">
+              <section className="">
                 {this.renderGrocerys()}
-              </section>              
+              </section>
             </div>
           </div>
-
     );
   }
 }
 
 App.propTypes ={
     items: PropTypes.array.isRequired,
-    incompleteCount : PropTypes.number.isRequired,
     currentUser: PropTypes.object,
     login: PropTypes.object
 }
 
+//https://guide.meteor.com/react.html#data
 export default createContainer(() => {
   return {
-      items: Grocerys.find({isDelete:false},{sort: { text: 1}}).fetch(),
-      incompleteCount: Grocerys.find({checked: { $ne: true }, isDelete:false}).count(),
+      items: Grocerys.find({isDelete:false},{sort: { text: 1}}).fetch()
   };
 }, App);
 

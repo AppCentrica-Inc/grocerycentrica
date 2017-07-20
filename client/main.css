@@ -107,3 +107,21 @@ section {
 .deleteicon{
     background-image: url('/public/close-browser.svg')
 }
+
+.borderButtonsTop{
+    border-top: 1px solid #e5e5e5;
+}
+
+.backgrouncButtonsBuyMoreDelete{
+    background-color: #f6f7f9;
+}
+
+.blButton {
+    border-left-style: solid;
+    border-color: #e5e5e5;
+    border-left-width: 1px;
+}
+
+.fontColorButton{
+    color: #4b4f56;
+}
