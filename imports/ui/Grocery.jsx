@@ -1,21 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Grocerys} from '../api/grocerys.js';
-import BuyMore  from './ButtonsComponents/BuyMore';
+import { createContainer } from 'meteor/react-meteor-data';
+import BuyMoreComponent  from './ButtonsComponents/BuyMore';
 import DeleteGrocery from './ButtonsComponents/DeleteGrocery';
+import { BuyMore } from '../api/grocerys';
 
 // Grocery component - represents a single grocery item
-export default class Grocery extends Component {
+class Grocery extends Component {
    
     
    deleteThisItem(){
+     console.log(this.props);
      if(this.props.connect){
        Meteor.call('grocerys.remove',this.props.itemed._id,this.props.userobj.email);
      }
    }  
 
    BuyMoreThisItem(){
-     console.log(this.props); 
+     console.log(this.props);
      if(this.props.connect){
        Meteor.call('buymore.insert',props.itemed._id, this.props.userobj.email)
      }else{
@@ -25,8 +27,8 @@ export default class Grocery extends Component {
     
   CountBuyMoreItem(ItemGroceryID){
     //var test = BuyMore.find({groceryID: ItemGroceryID}).fetch();
-    console.log("BUY MORE COUNT");
-    console.log(ItemGroceryID);
+    //console.log("BUY MORE COUNT");
+    //console.log(ItemGroceryID);
   }
     
   render() {
@@ -37,7 +39,8 @@ export default class Grocery extends Component {
            isDelete = true;
          }          
       }
-     this.CountBuyMoreItem(this.props.itemed._id);
+     console.log(this.props);
+     this.CountBuyMoreItem(this.props);
 
     return (        
       <div className="bg-white center bt b--black-40 ">            
@@ -47,7 +50,7 @@ export default class Grocery extends Component {
 
            <div className="pa1">
              <div className="dt dt--fixed bt borderButtonsTop backgrouncButtonsBuyMoreDelete ">
-                  {/* <BuyMore onClick={this.BuyMoreThisItem.bind(this)}/> */}
+                   <BuyMoreComponent onClick={this.BuyMoreThisItem.bind(this)}/> 
                   {isDelete ? 
                   <DeleteGrocery onClick={this.deleteThisItem.bind(this)}/>
                   : null
@@ -59,6 +62,22 @@ export default class Grocery extends Component {
     );
   }
 }
+
+Grocery.propsTypes ={
+  BuyMoreList: React.PropTypes.array,
+  ready: React.PropTypes.bool.isRequired
+}
+
+export default GroceryContainer = createContainer(( id ) => {
+  console.log("CONTAINER");
+  console.log(id)
+
+  return {
+    ready: Meteor.subscribe('BuyMore'),
+    BuyMoreList: BuyMore.find().fetch(),
+  };
+}, Grocery);
+
 
  
 
