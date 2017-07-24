@@ -6,9 +6,6 @@ export default class GroceryLogo extends Component {
         super(props);
     }
     render(){
-        // <h1>© GroceryCentrica - ({this.props.incompleteCount})</h1>
-
-        console.log(this.props);
      return (   <div>
                     <img src='/logo.svg' />
                      {this.props.connect ? 

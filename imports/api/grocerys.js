@@ -46,14 +46,20 @@ Meteor.methods({
             accessDate: new Date()
         });
     },
-    'buymore.insert'(groceryID,username){
-        check(groceryID, String);
+    'buymore.insert'(_groceryID,username,iwantedMore){
+        check(_groceryID, String);
         check(username, String);
-        BuyMore.insert({
-            groceryID,
-            username,
-            date : new Date()
-        });
+        check(iwantedMore, Number);
+        iwantedMore = iwantedMore === 0 ? 1: 0;
+        BuyMore.upsert({groceryID : _groceryID},{
+            $set: {
+                groceryID: _groceryID,
+                username: username,
+                date: new Date(),
+                activeWantedMore: iwantedMore 
+            }
+        },
+        function(error, linesAffect){console.log(error); console.log(linesAffect);});        
     }
 });
 

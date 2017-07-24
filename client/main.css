@@ -112,8 +112,14 @@ section {
     border-top: 1px solid #e5e5e5;
 }
 
-.backgrouncButtonsBuyMoreDelete{
+.backgroundButtonsBuyMoreDelete{
     background-color: #f6f7f9;
+    font-family: sans-serif;
+}
+
+.backgroundIwantedMore{
+    background-color: #9EEBCF;
+    font-family: sans-serif;
 }
 
 .blButton {

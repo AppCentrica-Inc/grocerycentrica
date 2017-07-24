@@ -1,7 +1,7 @@
 import GoogleLogin from 'react-google-login';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import DisplayAnImage from './DisplayImage.jsx'
+
 
 
 export default class LoginGoogle extends Component {
@@ -24,13 +24,6 @@ loginMenu() {
         className="no-underline fw6 f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2"
       />    );
 }
-
-loginSignin(){
-    profilePhoto = this.props.userobj.imageUrl;
-    profileName = this.props.userobj.name;
-    return (<DisplayAnImage profilePhoto={profilePhoto} profileName={profileName} />);
-}
-
 
 render() {
     var login;

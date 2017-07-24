@@ -7,30 +7,22 @@ import { BuyMore } from '../api/grocerys';
 
 // Grocery component - represents a single grocery item
 class Grocery extends Component {
-   
-    
+
    deleteThisItem(){
-     console.log(this.props);
      if(this.props.connect){
        Meteor.call('grocerys.remove',this.props.itemed._id,this.props.userobj.email);
      }
    }  
 
-   BuyMoreThisItem(){
-     console.log(this.props);
-     if(this.props.connect){
-       Meteor.call('buymore.insert',props.itemed._id, this.props.userobj.email)
-     }else{
-        console.log("Need to login");
-      }     
+   buymoreThisItem(){
+       if(this.props.connect){
+         Meteor.call('buymore.insert',this.props.itemed._id, this.props.userobj.email,this.props.iwantedMore.length);
+       }else{
+          console.log("Need to login");
+       }     
    }
     
-  CountBuyMoreItem(ItemGroceryID){
-    //var test = BuyMore.find({groceryID: ItemGroceryID}).fetch();
-    //console.log("BUY MORE COUNT");
-    //console.log(ItemGroceryID);
-  }
-    
+   
   render() {
     const taskClassName = this.props.itemed.checked ? 'checked' : '';
       let isDelete = false;
@@ -39,20 +31,24 @@ class Grocery extends Component {
            isDelete = true;
          }          
       }
-     console.log(this.props);
-     this.CountBuyMoreItem(this.props);
+      let IWantMoreTotal = this.props.iwantedMore.length;
 
     return (        
       <div className="bg-white center bt b--black-40 ">            
             <div className="pl3 fw2 db">
-              <p className="f8">{this.props.itemed.text}</p>
+              <h1 className="f4 fw4 mt2">{this.props.itemed.text}</h1>
+              {IWantMoreTotal ? 
+                  <small className="gray db pv2">{this.props.BuyMoreList.length} Buy More</small>
+                : 
+                  null
+              }
           </div>
 
            <div className="pa1">
-             <div className="dt dt--fixed bt borderButtonsTop backgrouncButtonsBuyMoreDelete ">
-                   <BuyMoreComponent onClick={this.BuyMoreThisItem.bind(this)}/> 
+             <div className="dt dt--fixed bt borderButtonsTop backgroundButtonsBuyMoreDelete ">
+                   <BuyMoreComponent wantedMore={IWantMoreTotal} handleBuyMore={this.buymoreThisItem.bind(this)}/>
                   {isDelete ? 
-                  <DeleteGrocery onClick={this.deleteThisItem.bind(this)}/>
+                  <DeleteGrocery handleDelete={this.deleteThisItem.bind(this)}/>
                   : null
                   }
               </div>
@@ -65,16 +61,15 @@ class Grocery extends Component {
 
 Grocery.propsTypes ={
   BuyMoreList: React.PropTypes.array,
+  iwantedMore: React.PropTypes.array,
   ready: React.PropTypes.bool.isRequired
 }
 
-export default GroceryContainer = createContainer(( id ) => {
-  console.log("CONTAINER");
-  console.log(id)
-
+export default GroceryContainer = createContainer(( item ) => {
   return {
     ready: Meteor.subscribe('BuyMore'),
-    BuyMoreList: BuyMore.find().fetch(),
+    BuyMoreList: BuyMore.find({groceryID : item.itemed._id}).fetch(),
+    iwantedMore: BuyMore.find({$and: [{groceryID: item.itemed._id},{username: item.userobj.email },{activeWantedMore: 1}]}).fetch()
   };
 }, Grocery);
 
